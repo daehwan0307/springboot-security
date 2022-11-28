@@ -7,14 +7,15 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class Response<T> {
+
     private String resultCode;
     private T result;
 
-    private static Response<Void> error(String resultCode) {
-        return new Response(resultCode, null);
+    public static Response<Void> error(String errorCode) {
+        return new Response<>(errorCode, null);
     }
 
-    public static <T> Response<T> suceess(T result) {
-        return new Response("SUCCESS", result);
+    public static <T> Response<T> success(T resultObject) {
+        return new Response<>("SUCCESS", resultObject);
     }
 }
