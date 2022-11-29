@@ -5,7 +5,7 @@ import com.hospital.review.domain.dto.UserDto;
 import com.hospital.review.domain.dto.UserJoinRequest;
 import com.hospital.review.domain.dto.UserJoinResponse;
 import com.hospital.review.domain.dto.UserLoginRequest;
-import com.hospital.review.domaindto.UserLoginResponse;
+import com.hospital.review.domain.dto.UserLoginResponse;
 import com.hospital.review.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.parameters.P;
@@ -29,7 +29,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public Response<UserLoginResponse> login(@RequestBody UserLoginRequest userLoginRequest) {
+    public Response<UserLoginResponse> login(@RequestBody UserLoginRequest userLoginRequest){
         String token = userService.login(userLoginRequest.getUserName(), userLoginRequest.getPassword());
         return Response.success(new UserLoginResponse(token));
     }

@@ -41,7 +41,7 @@ class UserControllerTest {
     @WithMockUser
     void join_success() throws Exception {
         UserJoinRequest userJoinRequest = UserJoinRequest.builder()
-                .userName("kyeongrok")
+                .userName("kyeongrok1")
                 .password("1q2w3e4r")
                 .email("oceanfog1@gmail.com")
                 .build();
