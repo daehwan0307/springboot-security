@@ -22,6 +22,6 @@ public class User {
     @Column(unique = true)
     private String userName;
     private String password;
-    private String emailAddress;
+    private String emailAddress;//
 
 }
